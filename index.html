@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Planner Login & Setup</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Create new project</h2>
+                <p>Choose how to start your project</p>
+            </div>
+            
+            <nav class="sidebar-options">
+                <div class="option-card active">
+                    <span class="icon">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                    </span>
+                    <span class="text">Create from an empty room</span>
+                </div>
+                <div class="option-card">
+                    <span class="icon">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3z"></path><path d="M3 9h18"></path><path d="M9 21V9"></path></svg>
+                    </span>
+                    <span class="text">Start with a template</span>
+                </div>
+                <div class="option-card">
+                    <span class="icon">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    </span>
+                    <span class="text">Upload your 2D plan</span>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="btn-secondary">Skip</button>
+                <label class="checkbox-label">
+                    <input type="checkbox">
+                    Don't show me again
+                </label>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="glass-panel">
+                <div class="welcome-header">
+                    <h1>Welcome!</h1>
+                    <p>We are helping you create your first room</p>
+                </div>
+
+                <div class="illustration">
+                    <!-- A stylized SVG icon representing room planning -->
+                    <svg viewBox="0 0 100 100" width="120" height="120" fill="none" class="animate-float">
+                        <path d="M20 80 L20 20 L50 50 Z" stroke="#333" stroke-width="2" fill="rgba(0,136,204,0.1)"></path>
+                        <rect x="40" y="40" width="50" height="40" rx="2" stroke="#333" stroke-width="2" fill="none"></rect>
+                        <line x1="40" y1="60" x2="90" y2="60" stroke="#333" stroke-width="2" stroke-dasharray="4 2"></line>
+                        <line x1="65" y1="40" x2="65" y2="80" stroke="#333" stroke-width="2" stroke-dasharray="4 2"></line>
+                        <circle cx="85" cy="75" r="2" fill="#333"></circle>
+                        <circle cx="45" cy="45" r="2" fill="#333"></circle>
+                    </svg>
+                </div>
+
+                <p class="subtitle">Start with a basic room shape and adapt it later</p>
+
+                <div class="sentence-form">
+                    I want to create my 
+                    <select id="room-type" class="inline-select">
+                        <option value="living-room">living room</option>
+                        <option value="bedroom">bedroom</option>
+                        <option value="kitchen">kitchen</option>
+                        <option value="bathroom">bathroom</option>
+                    </select>
+                    , it is approximately 
+                    <select id="room-area" class="inline-select">
+                        <option value="10">10 m²</option>
+                        <option value="20">20 m²</option>
+                        <option value="30">30 m²</option>
+                        <option value="40">40 m²</option>
+                    </select>
+                    and its shape is a 
+                    <select id="room-shape" class="inline-select">
+                        <option value="square">square</option>
+                        <option value="rectangle">rectangle</option>
+                    </select>
+                </div>
+
+                <button class="btn-primary" onclick="launchPlanner()">Launch planner</button>
+            </div>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
